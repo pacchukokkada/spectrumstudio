@@ -28,8 +28,6 @@ class Photo(models.Model):
 class SliderPhoto(models.Model):
     img = models.ImageField(upload_to="images/")
 
-    def __str__(self):
-        return self.img
 
 class WeddingCouple(models.Model):
     name = models.CharField(max_length=50)
