@@ -1,0 +1,1 @@
+web: gunicorn spectrum_studio.wsgi
