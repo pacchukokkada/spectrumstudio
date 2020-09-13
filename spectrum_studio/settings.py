@@ -25,7 +25,7 @@ SECRET_KEY = ')hw-bbh(-z^=e5!c_ocz1a=2jk-bt9vfdmo_*#3uqi^p(x&+8w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['spectrumstudios.herokuapp.com']
 
 
 # Application definition
