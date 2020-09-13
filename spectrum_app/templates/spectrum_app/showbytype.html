@@ -1,0 +1,51 @@
+{% extends 'spectrum_app/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>portfolio</title>
+{% endblock title %}
+{%block styling%}
+<style>
+  .gal{
+    margin:10px 50px;
+  }
+  .gal img {
+    transition: 1s;
+    padding: 15px;
+    width: 200px;
+  }
+  .gal img:hover{
+    filter:grayscale(65%);
+    transform: scale(1.1);
+    
+  }
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css2/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css2/icons.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css2/lightbox.min.css' %}">
+
+{%endblock%}
+{% block content %}
+<script type="text/javascript" src="{%static 'spectrum_app/js/lightbox-plus-jquery.min.js' %}"></script>
+<div class="contaier">
+              <!-- <div class="album-showcase">
+                <div class="row" data-aos="fade-up"> -->
+              
+               <!-- <div class="row">  -->
+            <center>     <div class="gal">
+                      {% for photo in photos%}
+                        <!-- <div class="col-md-4 col-sm-6" >  -->
+                        
+                
+                         <a href="{{photo.url}}" data-lightbox="mygallery"> <img src="{{photo.url}}" style="height:auto;width:280px;"></a>
+                            
+                        <!-- </div>   -->
+                      {% endfor %} 
+                    </div>
+                  </center>
+                    <!-- </div>   -->
+                
+                <!-- </div>
+              </div> -->
+            </div>
+{% endblock content %}

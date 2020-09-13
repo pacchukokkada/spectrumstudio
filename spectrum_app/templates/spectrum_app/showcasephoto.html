@@ -1,0 +1,22 @@
+{% extends 'spectrum_app/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>photos</title>
+{% endblock title %}
+{%block styling%}
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/icons.css' %}">
+{%endblock%}
+{% block content %}
+<div style="margin-left:150px;margin-right:50px">
+  <table class="gallery" border="0" cellspacing="10px" cellpadding="10px" >
+     
+  <tr>
+    {% for photo in photos%}
+  <td><img src="{{photo.img.url}}" height="300px" width="300px"></td>
+    {% endfor %}
+</tr>
+  </table>
+  </div>
+{% endblock content %}

@@ -1,0 +1,71 @@
+{% extends 'spectrum_app/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>SpectrumstudiO</title>
+{% endblock title %}
+{%block styling%}
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/icons.css' %}">
+<link rel="stylesheet" href="{% static 'spectrum_app/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+
+<!-- STYLE CSS -->
+<link rel="stylesheet" href="{% static 'spectrum_app/bookingcss/style.css' %}">
+{%endblock%}
+
+ 
+{% block content %}
+		<div class="content">
+			<div class="container">
+		<div class="wrapper" > 
+			<div class="inner">
+			<div class="image-holder">
+				<center><img src="{% static 'spectrum_app/images/wedding.jpeg' %}" width="360px" height="500px" alt="">
+				</center>	</div>
+				<form action="{% url 'book' %}" method="POST">
+					{% csrf_token %}
+					<h3>Book Us</h3>
+					<div class="form-wrapper">
+					
+						<input type="text" name="name" placeholder="Name" class="form-control" required>
+					
+					</div>
+	
+					<div class="form-wrapper">
+						
+						<input type="text" name="email" placeholder="Email Address" class="form-control"  required>
+					
+					</div>
+					<div class="form-wrapper">
+						
+						<input type="text" name="mobile" placeholder="Mobile" class="form-control" required pattern="[0-9]{10}">
+						
+					</div>
+					<div class="form-wrapper">
+						<select name="shoot_type" id="shoot_type" class="form-control" required>
+							<option value="" disabled selected>Shoot type</option>
+							<option value="Wedding">Wedding</option>
+							<option value="Portrait">Portrait</option>
+							<option value="Other events">Other events</option>
+						</select>
+					
+					</div>
+					<div class="form-wrapper">
+						<input type="text" name="date" placeholder="Date" class="form-control" id="date" onfocus="(this.type='date')" required>
+						
+					</div>
+					<div class="form-wrapper">
+						<input type="text" name="place" placeholder="Place" class="form-control"  required>
+						
+					</div>
+					<center>
+					<div>
+						<input type="submit" name="submit" id="submit" class="submit" value="Submit" />
+					</div>
+				</center>
+				</form>
+			</div>
+		</div>
+		</div>
+		</div>
+		{% endblock content %}

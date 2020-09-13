@@ -1,0 +1,53 @@
+{% extends 'spectrum_app/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Gallery</title>
+{% endblock title %}
+{%block styling%}
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/icons.css' %}">
+<style>
+ 
+  .gal img {
+    transition: 1s;
+  }
+  .gal img:hover{
+    filter:grayscale(65%);
+    transform: scale(1.1);
+    
+  }
+
+  </style>
+{%endblock%}
+{% block content %}
+<div class="content" >
+  <div class="container">
+    <br>
+    
+    <div class="album-showcase">
+      <div class="row" data-aos="fade-up">
+    <center> 
+     <div class="row"> 
+            {% for photo in photos%}
+              <div class="col-md-4 col-sm-6" > 
+                <a href="photo_show/{{photo.name}}/">    <div class="gal">    <img src="{{photo.main_photo.url}}" height="auto" width="100%"></div></a>
+                <h1 class="sideheading-other">{{photo.name}}</h1>
+                  <br> 
+              </div>  
+            {% endfor %} 
+          </div> 
+      </center> 
+      </div>
+     
+    </div>
+    <center>
+      <table>
+        <td><a href="{% url 'home' %}"><button  class="button button--isi button--text-thick button--text-upper button--size-s"><span>Home</span></button></a></td>
+      </table>
+    </center>
+
+  </div>
+</div>
+{% endblock content %}
+

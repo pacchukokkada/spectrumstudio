@@ -1,0 +1,166 @@
+{% extends 'spectrum_app/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>SpectrumstudiO</title>
+{% endblock title %}
+{%block styling%}
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/icons.css' %}">
+
+{%endblock%}
+
+ 
+{% block content %}
+<!-- sliding image -->
+
+<div class="content">
+
+<div id="slider">
+  {% if messages %}
+    {% for message in messages %}
+  
+      <div class="alert alert-{{message.tags}} alert-dissmissable fasde show" role="alert">
+      {{message}}
+      <button type="button" class="close" data-dissmiss="alert" aria-label="Close">
+       <span aria-hidden="true">&times</span>
+     </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+  <figure>
+  {%for photo in slider%}
+  <img src="{{photo.img.url}}" height="70%" width="100%">
+  {% endfor %}
+  </figure>
+  </div>
+  <div style="height: 30px;width: 100px;"></div>
+  
+  <!-- album showcase -->
+  <div class="album-showcase">
+    <div class="row" data-aos="fade-up">
+  <center> 
+   <div class="row"> 
+          {% for photo in photos%}
+            <div class="col-md-4 col-sm-6" > 
+              <img src="{{photo.main_photo.url}}" height="auto" width="100%">
+        <a class="album-link-text" href="photo_show/{{photo.name}}/">{{photo.name}}</a>
+                <br> 
+            </div>  
+          {% endfor %} 
+        </div> 
+    </center> 
+    </div>
+  </div>
+
+
+
+  <div style="height: 50px;width: 100%;"></div>
+  <p class="quotes">“Photography is a way of feeling, of touching, of loving. What you have caught on film is captured forever… It remembers little things, long after you have forgotten everything.”
+  — Aaron Siskind</p>
+  <div style="height:50px;width:100%"></div>
+  
+  
+  <!-- <div style="height: 250px;width: 100%;background-color: #f2f0f0;">
+  <div style="margin-left: 30%;margin-right: 30%;padding-top: 5% !important;text-align: center;">
+  <div style="padding-left: 15px;padding-right: 15px;width: 100%;">
+    <p style="font-size: 16px;font-family: Open Sans, sans-serif;color: #3e454c;">A picture is worth thousand words they say, but we feel wedding photographs are more than that. For the amount of love, joy, promise, dreams and memories they carry within, it is an endless journey of emotions that the couple gets to experience on the big day.we make sure not a moment is missed when you are in the flow of the occasion.</p>
+  <a class="btn btn-primary" style="font-family: Open Sans, sans-serif;" href="#">VIEW GALLERY</a>
+  </div> 
+  </div>
+  </div>
+  <div style="height: 100px;width: 100%;"></div> -->
+  
+  
+  <!-- film video -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6" data-aos="flip-left">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/oToBd3iiGvo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-6" data-aos="flip-right">
+        <p class="heading-other">Our Films</p>
+      <p class="wquote">"We document handpicked elements and moments that are packed with love,to render your wedding film as an ever unforgettable memory .
+      The footage is edited pixel to pixel to priovide with an everlasting treasure of your dream story.The ageless quality of our images compliment the energy of our films."</p>
+       <p style="text-align: center;"><a href="films/" class="btn btn-primary">Watch Us</a></p>
+    </div>
+    </div>
+  </div>
+  <div style="height: 50px;width: 100%;"></div>
+  
+  <!-- Why Us?-->
+  <div class="container">
+    <p class="heading-other">Why Us</p>
+  <div class="row">
+  <p class="quotes">"We capture MEMORIES"</P>
+  <p class="wquote">We the team Spectrum love the field of photography as much as we love us...Our aim is to give our great photography and films to you. Our team that is passionate about photography,films,designs and editing work too.We always together create beautiful memories by our work,we love our work and always accept it as a challenge.
+  We had a many work experiences in this field.We promise you that we will capture the best of best moments and memories and will reach your satisfaction.</p>
+  </div>
+  </div>
+  <div style="height: 0px;width: 100%;"></div>
+  <!-- other services -->
+  
+
+  <div class="container">
+    <h1 class="heading-other">other services</h1>
+    <div style="height: 0px;width: 100%;"></div>
+    <div class="row">
+      <div class="col-sm-4" data-aos="fade-up" data-aos-duration="1000">
+        <div class="hovereffect">
+          <img src="{% static 'spectrum_app/images/album/album1.jpg' %}" style="height: auto;width:100%; " >
+          
+          <div class="overlay">
+              
+             <a class="info" href="phototypes/Commercial/">VISIT OUR WORKS</a>
+          </div>
+
+      </div>
+      <h1 class="sideheading-other">Commercial Works</h1>
+        
+      </div>
+      <div class="col-sm-4" data-aos="fade-up" data-aos-duration="1000">
+        <div class="hovereffect">
+          <img src="{% static 'spectrum_app/images/album/album2.jpg' %}" style="height: auto;width:100%; " >
+          
+          <div class="overlay">
+              
+             <a class="info" href="phototypes/Kids/">VISIT OUR WORKS</a>
+          </div>
+
+      </div>
+      <h1 class="sideheading-other">Kids Photography</h1>
+        
+      </div>
+      <div class="col-sm-4" data-aos="fade-up" data-aos-duration="1000">
+        <div class="hovereffect">
+          <img src="{% static 'spectrum_app/images/album/album3.jpg' %}" style="height: auto;width:100%; " >
+          
+          <div class="overlay">
+             <a class=" info " href="phototypes/Portrait/"> VISIT OUR WORKS</a>
+          </div>
+
+      </div>
+      <h1 class="sideheading-other">Studio Portraits</h1>
+        
+      </div>
+    </div>
+  </div>
+  <div style="height: 50px;width: 100%;"></div>
+  <div class="container">
+    <div class="heading-other">Contact Us</div>
+    <div class="col-md-6">
+      <br> <br>
+      <p class="sideheading-other" ><i class="fas fa-map-marked-alt">Visit Us:</i></p> 
+     
+      <p style="font-size:25px; padding-left: 30px;">Spectrum Studio <br>Gothujji Building Gothuji road <br>Dharmasthala, Belthangady <br>
+      D.K, Karnataka-574240</p> <br> <p style="font-size:25px; padding-left: 30px;">Or</p>
+     <center><a href="{% url 'book' %}"><button class="button button--isi button--text-thick button--text-upper button--size-s"><span>Book Now</span></button></a> </center>
+    </div>
+    <div class="col-md-5" class="responsive">
+      <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.192188668964!2d75.38421931390845!3d12.959550618651216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4c9c322627bb3%3A0x6a97b6f3b71de97f!2sSpectrum%20Studio!5e0!3m2!1sen!2sin!4v1597423725291!5m2!1sen!2sin" width="100%" height="365px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></center>
+    </div>
+  </div>
+<br>
+</div>
+
+{% endblock content %}

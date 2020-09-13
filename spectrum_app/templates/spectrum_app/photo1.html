@@ -1,0 +1,34 @@
+{% extends 'spectrum_app/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>SpectrumstudiO</title>
+{% endblock title %}
+{%block styling%}
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/icons.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/photostyle.css' %}">
+{%endblock%}
+
+{% block content %}
+
+<div style="margin-left:100px;margin-right:100px">
+    <img src="{{couple.main_photo.url}}" height="100%" width="100%">
+    <h1 class="heading-other" ><i>{{couple.name}}</i></h1>
+          <p class="wquote">"We document handpicked elements and maoments that are packed with love,to render your wedding film as illustrious as acontemporary cinematic record.
+          The footage is edited meticulously to priovide with an everlasting treasured testament of your dream story.The ageless quality of our images compliment the energy of our films."</p>
+    <p class="wquote"><b>Photographers:</b></p>{{couple.Photographer}}
+    <p class="wquote"><b>Date:</b>{{couple.date}}</p>
+    <p class="wquote"><b>Venue:</b>{{couple.place}}</p>
+    <div class="galery">
+        {% for photo in photos %}
+            <div class="im">
+                <img src="{{photo.img.url}}" />
+            </div>
+          {% endfor %}
+        </div>	
+    <div style="height: 50px;width: 100%;"></div>
+    </div>
+ 
+
+{%endblock%}

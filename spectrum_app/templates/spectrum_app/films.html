@@ -1,0 +1,39 @@
+{% extends 'spectrum_app/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>SpectrumstudiO</title>
+{% endblock title %}
+{%block styling%}
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'spectrum_app/css/icons.css' %}">
+{%endblock%}
+{%block content%}
+<div class="container">
+<div class="heading-other">Films</div>
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe src="https://www.youtube.com/embed/BeevR3PAGBw" class="embed-responsive-item"
+    frameborder="0" allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br>
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe src="https://www.youtube.com/embed/0BuH7JvaRho" frameborder="0" class="embed-responsive-item"
+    allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br>
+<div class="embed-responsive embed-responsive-16by9">
+   
+    <iframe src="https://www.youtube.com/embed/6NXcdZbFy3o" frameborder="0" class="embed-responsive-item"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br>
+<div class="embed-responsive embed-responsive-16by9"> 
+    <iframe src="https://www.youtube.com/embed/LvK_hfMXVT8" frameborder="0" class="embed-responsive-item"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br>  
+    <center><a href="/" class="btn btn-info btn-lg">Back</a></center><br>
+
+</div>
+{%endblock%}
