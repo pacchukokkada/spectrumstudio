@@ -1,0 +1,59 @@
+.gal{
+	display: flex;
+	flex-wrap: wrap; 
+	justify-content: center;  
+text-align:justify;
+/*margin-left:70px;
+margin-right:30px;*/
+font-size:6;
+ }
+.gal img{
+  background:lavender;
+  padding:15px;
+	/*margin: 20px;*/
+	width:500px;
+	height: 300px;
+	transition: all 1s;
+}
+.gal img:hover {
+	transform: scale(1.1);
+}
+figcaption{
+	text-align: center;
+  font-size: 20px;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 4rem 8rem;
+  columns: 4 300px;
+  column-gap: 2rem;
+  
+    .card img {
+      margin: 0 1rem 2rem 0;
+      display: block;
+      background: #333;
+      border-radius: 1rem;
+      border: none;
+      overflow: hidden;
+      min-height: 200px;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+      
+         &:hover {
+          filter: brightness(50%);
+      }
+    }
+     
+  @media only screen and (max-width: 1000px) {
+    padding: 2rem;
+  }
+}
